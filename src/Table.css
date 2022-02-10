@@ -1,0 +1,33 @@
+thead {
+  display: none;
+}
+
+tbody tr {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+  border: 1px solid;
+  margin: 1em;
+  padding: 0.5em;
+}
+
+tbody tr td {
+  flex-basis: 5em;
+  flex-grow: 1;
+  border: 1px solid;
+  text-align: center;
+}
+
+tbody tr::before {
+  content: attr(aria-label);
+  flex-basis: 100%;
+  font-style: italic;
+  font-weight: bold;
+  text-align: center;
+}
+
+tbody tr td::before {
+  content: attr(aria-label) " = ";
+  font-weight: bold;
+  display: block;
+}
