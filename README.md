@@ -1,3 +1,22 @@
+# Responsive table
+
+Semantically speaking the table is a good way to present tabular data. However it does not work well at smaller viewport widths. Can we use CSS to switch to a card-style format?
+
+I'm packaging this as a React component for convenience, but the intent is not to rely on React for anything other than data binding. The data is arbitrary - I've chosen times tables as it is easy to generate an arbitrary number of columns and rows.
+
+## Headings
+These are stuck at the top of the table, in the `<thead>` element. For a card, we need to colocate them with each value. The React component duplicates the content as `[aria-label]`s on each `<td>`, which we can render in the `:before` pseudo-element. Meanwhile the original table headings are hidden from view.
+
+## Layout
+For now, just some flexbox to keep things tidy, with some borders and whitespace so we can see what's going on.
+
+## Next steps
+We can apply a media query to switch between the tabular and card layouts
+
+## Other approaches
+
+CSS Tricks has a similar approach at https://css-tricks.com/responsive-data-tables/ - this is over 10 years old but also hides the `<thead>` and uses `:before` for labels
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
