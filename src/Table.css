@@ -1,3 +1,10 @@
+table {
+  --spacing: 0.5em;
+  --border-radius: 2px;
+  --border: 1px solid;
+  --cell-width: 5em;
+}
+
 thead {
   display: none;
 }
@@ -5,16 +12,18 @@ thead {
 tbody tr {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5em;
-  border: 1px solid;
+  gap: var(--spacing);
+  border: var(--border);
+  border-radius: var(--border-radius);
   margin: 1em;
-  padding: 0.5em;
+  padding: var(--spacing);
 }
 
 tbody tr td {
-  flex-basis: 5em;
+  flex-basis: var(--cell-width);
   flex-grow: 1;
-  border: 1px solid;
+  border: var(--border);
+  border-radius: var(--border-radius);
   text-align: center;
 }
 
